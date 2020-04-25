@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="../css/estilo.css"/>
+    <script src="../javascript/index.js"></script>
+</head>
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <hgroup id="texto">
+                <h1>CALCULADORA</h1>
+                <h2>Cálculos gerais e cálculos básicos</h2>
+            </hgroup>
+            <img id="icone" src="../imagens/ajuda.png"/>
+            <nav id="menu">
+                <ul>
+                    <li onmousemove="mudaFoto('../imagens/calculadora.png')" onmouseout="mudaFoto('../imagens/ajuda.png')">
+                        <a id="1" href="../index.html">1 Operando</a>
+                    </li>
+                    <li onmousemove="mudaFoto('../imagens/calc-basico.png')" onmouseout="mudaFoto('../imagens/ajuda.png')">
+                        <a id="2" href="operados-2.html">2 Operandos</a>
+                    </li>
+                    <li onmousemove="mudaFoto('../imagens/calculadora-moeda.png')" onmouseout="mudaFoto('../imagens/ajuda.png')">
+                        <a id="3" href="conversor-de-moedas.html">Conversor de Moedas</a>
+                    </li>
+                    <li onmousemove="mudaFoto('../imagens/conversor.png')" onmouseout="mudaFoto('../imagens/ajuda.png')">
+                        <a id="4" href="conversor-de-bases.html">Conversor de Bases</a>
+                    </li>
+                    <li class="active" onmousemove="mudaFoto('../imagens/ajuda.png')" onmouseout="mudaFoto('../imagens/ajuda.png')">
+                        <a class="active" id="5" href="ajuda.html">Ajuda</a>
+                    </li>        
+                </ul>
+            </nav>
+        </header>
+        <section id="corpo">
+            <h1>CONVERSOR DE BASES</h1>
+            <p>Texto de ajuda explicando como funciona a calculadora, quais operações,
+                nome dos integrantes da equipe, etc.</p>
+            <button id="voltar">
+            <a id="voltar-link" href="../index.html">Retornar</a></button>
+        </section>
+        <footer id="rodape">
+            <p>Calculadora &copy; 2020 - by Kariny Keny</p>
+        </footer>
+    </div>
+</body>
+</html>

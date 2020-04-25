@@ -1,0 +1,17 @@
+
+#resultado-div {
+    align-items: center;
+}
+
+option {
+    text-align: center;
+}
+
+table#operandos input{
+    width: 100%;
+    text-align: center;
+}
+
+table#operandos {
+    margin-bottom: 12%;
+}

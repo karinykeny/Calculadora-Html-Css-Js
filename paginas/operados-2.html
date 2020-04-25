@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="../css/estilo.css"/>
+    <link rel="stylesheet" href="../css/estilo-operados-2.css"/>
+    <script src="../javascript/index.js"></script>
+</head>
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <hgroup id="texto">
+                <h1>CALCULADORA</h1>
+                <h2>Cálculos gerais e cálculos básicos</h2>
+            </hgroup>
+            <img id="icone" src="../imagens/calc-basico.png"/>
+            <nav id="menu">
+                <ul>
+                    <li onmousemove="mudaFoto('../imagens/calculadora.png')" onmouseout="mudaFoto('../imagens/calc-basico.png')">
+                        <a id="1" href="../index.html">1 Operando</a>
+                    </li>
+                    <li class="active" onmousemove="mudaFoto('../imagens/calc-basico.png')" onmouseout="mudaFoto('../imagens/calc-basico.png')">
+                        <a class="active" id="2" href="operados-2.html">2 Operandos</a>
+                    </li>
+                    <li onmousemove="mudaFoto('../imagens/calculadora-moeda.png')" onmouseout="mudaFoto('../imagens/calc-basico.png')">
+                        <a id="3" href="conversor-de-moedas.html">Conversor de Moedas</a>
+                    </li>
+                    <li onmousemove="mudaFoto('../imagens/conversor.png')" onmouseout="mudaFoto('../imagens/calc-basico.png')">
+                        <a id="4" href="conversor-de-bases.html">Conversor de Bases</a>
+                    </li>
+                    <li onmousemove="mudaFoto('../imagens/ajuda.png')" onmouseout="mudaFoto('../imagens/calc-basico.png')">
+                        <a id="5" href="ajuda.html">Ajuda</a>
+                    </li>        
+                </ul>
+            </nav>
+        </header>
+        <section id="corpo">
+            <h1>2-OPERANDOS</h1>
+                <form id="form">
+                    <table id="operandos">
+                        <tr>
+                            <td>Valor 1:</td>
+                            <td align="center">Operador</td>
+                            <td>Valor 2:</td>
+                        </tr>
+                        <tr>
+                            <td><input id="valor01" type="text"></td>
+                            <td align="center">
+                                <select id="select-2">
+                                    <option value="somar"> + </option>
+                                    <option value="subtrair"> - </option>
+                                    <option value="multiplicar"> * </option>
+                                    <option value="dividir"> / </option>
+                                    <option value="mod"> mod </option>
+                                </select>
+                            </td>
+                            <td><input id="valor02" type="text"></td>
+                            
+                        </tr>
+                    </table>
+                    <div id="resultado-div" align="center">
+                        <label id="resultado-label">Resultado:</label><br>
+                        <input id="resultado-input" type="text" readonly value=""><br><br>
+                        <button id="resultado-limpar" type="reset" onclick="limpar()">Limpar</button>
+                        <button type="button" onclick="calcular()">Executar</button>
+                    </div> 
+                </form>
+        </section>
+        <footer id="rodape">
+            <p>Calculadora &copy; 2020 - by Kariny Keny</p>
+        </footer>
+    </div>
+</body>
+</html>

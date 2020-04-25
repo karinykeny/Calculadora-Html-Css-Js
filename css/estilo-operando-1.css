@@ -1,0 +1,14 @@
+table#operando-table {
+    width: 70%;
+    margin-left: 25%;
+    padding-bottom: 6%;
+}
+
+table#operando-table td {
+    width: 45%;
+}
+
+table#operando-table input#operando-input {
+    text-align: center;
+    width: 80%;
+}

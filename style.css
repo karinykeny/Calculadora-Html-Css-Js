@@ -1,0 +1,172 @@
+
+
+
+.ajuda {
+  float:right
+}
+
+.calc {
+    width: 23%;
+    margin-left: 20px;
+}
+
+.result {
+  font-family: "Lucida Console", Courier, monospace;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.calculating-body {
+  width: 100%;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+.result-grup {
+  margin-top: 3%;
+}
+
+.container {
+  margin: 0px 25px;
+}
+
+
+
+
+/* GERAL ################################################################################## */
+ul {
+  list-style-type: none;
+}
+
+li {
+  float: left;
+}
+
+button {
+  background-color: #1e1c1c;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Lucida Console", Courier, monospace;
+  width: 15%;
+  height: 40px;
+  border: 1px solid;
+  border-radius: 23px;
+}
+
+button:hover {
+  background-color: #e21ac1;
+  border-color: #e21ac1;
+  color: black;
+}
+
+h1 {
+  text-align: center;
+}
+
+input, select {
+  border: 1px solid;
+  border-radius: 6px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 1%;
+}
+
+.active {
+  background-color: #e21ac1;
+  color: black;
+}
+
+.topo{
+  margin: 0;
+  text-align: center;
+}
+
+.menu-ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1e1c1c;
+}
+
+.menu-li {
+  text-align: center;
+}
+
+.menu-li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Lucida Console", Courier, monospace;
+  cursor: pointer;
+  outline: none;
+}
+
+.reset-input {
+  border: 1px solid;
+  border-radius: 6px;
+  width: 60%;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#um, #dois, #tres, #quatro, #cinco {
+  margin: 0% 20% 0% 20%;
+}
+
+/* 1 OPERANDO ############################################################################# */
+.operando-input {
+  width: 45%;
+}
+
+.operando-label {
+  font-family: "Lucida Console", Courier, monospace;
+  font-size: 18px;
+}
+
+.operando-table {
+  padding: 2% 0% 2% 0%;
+  width: 100%;
+}
+
+.operando-td {
+  width: 50%;
+}
+
+/* 2 OPERANDOS ############################################################################ */
+.dois-ul input{
+  width: 90%;
+}
+
+.dois-ul select {
+  width: 83%;
+}
+
+.valor-um, .valor-tres {
+  width: 40%;
+}
+
+.valor-dois {
+  width: 20%;
+}
+
+#operador-select {
+  margin-top: 2%;
+  height: 34px;
+}
+
+#dois {
+  padding: 2% 0% 10% 0%;
+}
+
+/* CONVERSOR DE MOEDAS ##################################################################### */
+
+/* CONVERSOR DE BASES ###################################################################### */
+
+/* AJUDA ################################################################################### */
