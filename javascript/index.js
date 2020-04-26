@@ -79,7 +79,7 @@ function calcular() {
  }
 
  function converter(inf) {
-    var moeda_1 = parseFloat(document.getElementById('valor').value);
+    var moeda_1 = document.getElementById('valor').value;
 
     if ( !isNaN(moeda_1) && inf.value != "" ){
         switch(inf.value) {
@@ -112,6 +112,31 @@ function calcular() {
         document.getElementById("resultado-input").value = "Por favor informe as entradas corretamente!";
     }
  }
+
+ function ConverterBase(conversorBase) {
+    var valorBase = parseFloat(document.getElementById("valorBase").value);
+    var valorBase2 = document.getElementById("valorBase").value.toString();
+    var res;
+
+    switch (conversorBase.value) {
+        case "decBin":
+            res = valorBase.toString(2);
+            break;
+        case "decHex":
+            res = valorBase.toString(16);
+            break;
+        case "binDec":
+            res = parseInt(valorBase2, 2);;
+            break;
+        case "hexDec":
+            res = parseInt(valorBase2, 16);
+        break;
+        default:
+            alert("Algo errado aconteceu, tente novamente!");
+        break;
+    }
+    document.getElementById("resultado-input").value = res;
+}
 
  function limpar() {
     document.getElementById("resultado-input").style.color = "black";
