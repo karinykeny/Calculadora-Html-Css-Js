@@ -8,36 +8,37 @@ function resultado(oper) {
     if ( !isNaN(valor) && oper.value != "" ){
         document.getElementById("resultado-input").style.color = "black";
 
-        if(oper.value = "fatorial") {
-            if (valor < 1) {
-                var res = "Inpossível calcular o fatorial do número passado!"
-                document.getElementById("resultado-input").style.color = "red";
-            } else {
-                var resultado = 1;
-                var count = 1;
-                numero = valor;
-                while(count<=numero){
-                    resultado *= count;
-                    count++;
+        switch(oper.value) {
+            case 'fatorial':
+                if (valor < 0) {
+                    var res = "Inpossível calcular o fatorial do número passado!"
+                    document.getElementById("resultado-input").style.color = "red";
+                } else {
+                    var resultado = 1;
+                    var count = 1;
+                    numero = valor;
+                    while(count<=numero){
+                        resultado *= count;
+                        count++;
+                    }
+                    res = resultado;
                 }
-                res = resultado;
-            }
-        } else if (oper.value = "quadrada") {
-            
-    
-        } else if (oper.value = "quadrado") {
-            res = valor * valor;
-            
-        } else if (oper.value = "seno") {
-            console.log("entrou")
-            res = Math.sin(valor);
-            console.log(res)
-            
-        } else if (oper.value = "cubo") {
-            res = valor * valor * valor;
-            
-        } else if (oper.value = "divisor") {
-            
+                break;
+            case 'quadrada':
+                res = Math.sqrt(valor); 
+                break;
+            case 'quadrado':
+                res = Math.pow(valor, 2)
+                break;
+            case 'seno':
+                res = Math.sin(valor);
+                break;
+            case 'cubo':
+                res = Math.pow(valor, 3)
+                break;
+            case 'divisor':
+                res = 1 / valor;
+                break;
         }
     } else {
         var res = "Por favor informe as entradas corretamente!"
@@ -75,6 +76,41 @@ function calcular() {
         document.getElementById("resultado-input").style.color = "black";
     }
     document.getElementById("resultado-input").value = res;
+ }
+
+ function converter(inf) {
+    var moeda_1 = parseFloat(document.getElementById('valor').value);
+
+    if ( !isNaN(moeda_1) && inf.value != "" ){
+        switch(inf.value) {
+            case 'RU':
+                var entrada = "BRL_USD"
+                var simbolo = "$"   
+                break;
+            case 'UR':
+                var entrada = "USD_BRL"
+                var simbolo = "R$" 
+                break;
+            case 'RE':
+                var entrada = "BRL_EUR"
+                var simbolo = "€" 
+                break;
+            case 'ER':
+                var entrada = "EUR_BRL"
+                var simbolo = "R$" 
+                break;
+        }
+        var url = `https://free.currconv.com/api/v7/convert?q=${entrada}&compact=ultra&apiKey=d910ec66dae52a007dbc`;
+        fetch(url).then(response => { return response.json(); })
+                  .then( json => {
+                      var cotacao = json[entrada];
+                      document.getElementById("resultado-input").value = simbolo + " "  + (cotacao * moeda_1).toFixed(2); 
+                      document.getElementById("resultado-input").style.color = "black";
+                  });
+    } else {
+        document.getElementById("resultado-input").style.color = "red";
+        document.getElementById("resultado-input").value = "Por favor informe as entradas corretamente!";
+    }
  }
 
  function limpar() {

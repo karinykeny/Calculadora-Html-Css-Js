@@ -1,0 +1,8 @@
+table#conversor {
+    margin-left: 4%;
+    padding-bottom: 5%;
+}
+
+table#conversor input {
+    text-align: center;
+}

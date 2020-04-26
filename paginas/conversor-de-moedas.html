@@ -39,37 +39,37 @@
         <section id="corpo">
             <h1>CONVERSOR DE MOEDAS</h1>
                 <form id="operados-form" method="POST">
-                    <table>
+                    <table id="conversor">
                         <tr>
-                            <td>Valor:</td>
+                            <td id="um">Valor:</td>
                             <td>Cotações:</td>
-                            <th>US$</th>
-                            <th>Euro €</th>
+                            <th  align="left">US$</th>
+                            <th align="left">Euro €</th>
                         </tr>
                         <tr>
-                            <td><input type="text"></td>
+                            <td><input id="valor" type="text"></td>
                             <td></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
+                            <td><input id="US$" type="text" disabled></td>
+                            <td><input id="euro" type="text" disabled></td>
                         </tr>
                         <tr>
-                            <td><input name="conversor" type="radio" value="RU"><b>R$&rarr;US$</b></td>
+                            <td id="um"><input name="conversor" type="radio" value="RU"><b>R$&rarr;US$</b></td>
                             <td></td>
                             <td><input name="conversor" type="radio" value="UR"><b>US$&rarr;R$</b></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td><input name="conversor" type="radio" value="RU"><b>R$&rarr;Euro €</b></td>
+                            <td id="um"><input name="conversor" type="radio" value="RE"><b>R$&rarr;Euro €</b></td>
                             <td></td>
-                            <td><input name="conversor" type="radio" value="UR"><b>Euro €&rarr;R$</b></td>
+                            <td><input name="conversor" type="radio" value="ER"><b>Euro €&rarr;R$</b></td>
                             <td></td>
                         </tr>
                     </table>
                     <div id="resultado-div" align="center">
                         <label id="resultado-label">Resultado:</label><br>
                         <input id="resultado-input" type="text" readonly><br><br>
-                        <button id="resultado-limpar" type="reset">Limpar</button>
-                        <button id="resultado-enviar" type="submit" onclick="performResult(document.form)">Executar</button>
+                        <button id="resultado-limpar" type="reset" onclick="limpar()">Limpar</button>
+                        <button id="resultado-enviar" type="button" onclick="converter(conversor)">Executar</button>
                     </div> 
                 </form>
         </section>
