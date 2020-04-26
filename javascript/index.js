@@ -51,7 +51,8 @@ function calcular() {
     var valor1 =  parseFloat(document.getElementById("valor01").value);
     var valor2 = parseFloat(document.getElementById("valor02").value);
     var oper = document.getElementById("select-2").value;
-
+    console.log(valor1)
+    console.log(valor2)
     if(isNaN(valor1) || isNaN(valor2)){
         var res = "Informe todas as entradas!"
         document.getElementById("resultado-input").style.color = "red";
@@ -62,15 +63,20 @@ function calcular() {
                 var res = valor1 + valor2;
                 break;
             case 'subtrair':
-                var res = valor1-valor2;
+                var res = valor1 - valor2;
                 break;
             case 'multiplicar':
-                var res = valor1*valor2;
+                var res = valor1 * valor2;
                 break;
             case 'dividir':
-                var res = valor1/valor2;
+                var res = valor1 / valor2;
+                break;
             case 'mod':
-                var res = valor1%valor2;
+                var res = valor1 % valor2;
+                break;
+            default:
+                var res = "Algo errado aconteceu, tente novamente!";
+                document.getElementById("resultado-input").style.color = "red";
                 break;
         }
         document.getElementById("resultado-input").style.color = "black";
@@ -79,34 +85,30 @@ function calcular() {
  }
 
  function converter(inf) {
-    var moeda_1 = document.getElementById('valor').value;
+    var valor = parseFloat(document.getElementById('valor').value);
+    var dolar = parseFloat(document.getElementById('dolar').value);
+    var euro = parseFloat(document.getElementById('euro').value);
 
-    if ( !isNaN(moeda_1) && inf.value != "" ){
+    if ( !isNaN(valor) && inf.value != "" && (!isNaN(dolar) || !isNaN(euro)) ){
         switch(inf.value) {
             case 'RU':
-                var entrada = "BRL_USD"
-                var simbolo = "$"   
+                var res = "$ " + (valor/dolar).toFixed(2);   
                 break;
             case 'UR':
-                var entrada = "USD_BRL"
-                var simbolo = "R$" 
+                var aux = 1/dolar;
+                var res = "R$ " + (aux * valor).toFixed(2);
                 break;
             case 'RE':
-                var entrada = "BRL_EUR"
-                var simbolo = "€" 
+                var res = "€ " + (valor/euro).toFixed(2); 
                 break;
             case 'ER':
-                var entrada = "EUR_BRL"
-                var simbolo = "R$" 
+                var aux = 1/euro;
+                var res = "€ " + (aux * valor).toFixed(2); 
                 break;
         }
-        var url = `https://free.currconv.com/api/v7/convert?q=${entrada}&compact=ultra&apiKey=d910ec66dae52a007dbc`;
-        fetch(url).then(response => { return response.json(); })
-                  .then( json => {
-                      var cotacao = json[entrada];
-                      document.getElementById("resultado-input").value = simbolo + " "  + (cotacao * moeda_1).toFixed(2); 
-                      document.getElementById("resultado-input").style.color = "black";
-                  });
+        document.getElementById("resultado-input").value = res; 
+        document.getElementById("resultado-input").style.color = "black";
+
     } else {
         document.getElementById("resultado-input").style.color = "red";
         document.getElementById("resultado-input").value = "Por favor informe as entradas corretamente!";
@@ -118,26 +120,39 @@ function calcular() {
     var valorBase2 = document.getElementById("valorBase").value.toString();
     var res;
 
-    switch (conversorBase.value) {
-        case "decBin":
-            res = valorBase.toString(2);
+    if ( valorBase2 != "" && valorBase2 != undefined && conversorBase.value != "") {
+        
+        switch (conversorBase.value) {
+            case "decBin":
+                res = valorBase.toString(2);
+                var cor = "black";
+                break;
+            case "decHex":
+                res = valorBase.toString(16);
+                var cor = "black";
+                break;
+            case "binDec":
+                res = parseInt(valorBase2, 2);
+                var cor = "black";
+                break;
+            case "hexDec":
+                res = parseInt(valorBase2, 16);
+                var cor = "black";
             break;
-        case "decHex":
-            res = valorBase.toString(16);
+            default:
+                res = "Algo errado aconteceu, tente novamente!";
+                var cor = "red";
             break;
-        case "binDec":
-            res = parseInt(valorBase2, 2);;
-            break;
-        case "hexDec":
-            res = parseInt(valorBase2, 16);
-        break;
-        default:
-            alert("Algo errado aconteceu, tente novamente!");
-        break;
-    }
+        }
+        
+    } else {
+        var cor = "red";
+        res = "Por favor informe as entradas corretamente!";
+    } 
     document.getElementById("resultado-input").value = res;
+    document.getElementById("resultado-input").style.color = cor;
 }
 
- function limpar() {
+function limpar() {
     document.getElementById("resultado-input").style.color = "black";
- }
+}

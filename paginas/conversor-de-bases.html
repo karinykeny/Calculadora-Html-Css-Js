@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="../css/estilo.css"/>
+    <link rel="stylesheet" href="../css/estilo-conversor-base.css"/>
     <script src="../javascript/index.js"></script>
 </head>
 <body>
@@ -38,18 +39,19 @@
         <section id="corpo">
             <h1>CONVERSOR DE BASES</h1>
                 <form id="operados-form" method="POST">
-
-                    <label>Valor:</label><br>
-                    <input type="text" id="valorBase"><br>
-                    <input name="conversorBase" type="radio" value="decBin"><b>Dec&rarr;Bin</b><br>
-                    <input name="conversorBase" type="radio" value="decHex"><b>Dec&rarr;Hex</b><br>
-                    <input name="conversorBase" type="radio" value="binDec"><b>Bin&rarr;Dec</b><br>
-                    <input name="conversorBase" type="radio" value="hexDec"><b>Hex&rarr;Dec</b>
+                    <div id="entradas">
+                        <label>Valor:</label><br>
+                        <input type="text" placeholder="Entrada para conversão" id="valorBase"><br>
+                        <input name="conversorBase" type="radio" value="decBin"><b>Dec&rarr;Bin</b><br>
+                        <input name="conversorBase" type="radio" value="decHex"><b>Dec&rarr;Hex</b><br>
+                        <input name="conversorBase" type="radio" value="binDec"><b>Bin&rarr;Dec</b><br>
+                        <input name="conversorBase" type="radio" value="hexDec"><b>Hex&rarr;Dec</b>
+                    </div>
 
                     <div id="resultado-div" align="center">
                         <label id="resultado-label">Resultado:</label><br>
                         <input id="resultado-input" type="text" readonly><br><br>
-                        <button id="resultado-limpar" type="reset">Limpar</button>
+                        <button id="resultado-limpar" type="reset" onclick="limpar()">Limpar</button>
                         <button id="resultado-enviar" type="button" onclick="ConverterBase(conversorBase)">Executar</button>
                     </div>
 

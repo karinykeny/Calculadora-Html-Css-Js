@@ -1,0 +1,9 @@
+input#valorBase {
+    width: 60%;
+    text-align: center;
+    margin-top: 8px;
+}
+
+div#entradas {
+    padding: 10px 210px 40px 210px;
+}

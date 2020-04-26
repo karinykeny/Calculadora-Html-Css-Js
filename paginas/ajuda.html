@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="../css/estilo.css"/>
+    <link rel="stylesheet" href="../css/estilo-ajuda.css"/>
     <script src="../javascript/index.js"></script>
 </head>
 <body>
-    <div id="interface">
+    <div id="interface2">
         <header id="cabecalho">
             <hgroup id="texto">
                 <h1>CALCULADORA</h1>
@@ -36,14 +37,68 @@
             </nav>
         </header>
         <section id="corpo">
-            <h1>CONVERSOR DE BASES</h1>
-            <p>Texto de ajuda explicando como funciona a calculadora, quais operações,
-                nome dos integrantes da equipe, etc.</p>
-            <button id="voltar">
-            <a id="voltar-link" href="../index.html">Retornar</a></button>
+            <h1>AJUDA</h1>
+            <h4>FUNÇÕES GERAIS</h4>
+            <p>
+                <b>Ao clicar do botão Limpar: </b>Clicando nessa opção você obtém a limpeza de todos os campos de entrada e saída da tela.
+            </p>
+            <p>
+                <b>Ao clicar no botão Executar: </b>Clicando nessa opção você submete os dados de entrada para obtenção do resultado.
+            </p>
+            <br>
+
+            <li><b>1 OPERANDO</b></li>
+            <div id="informacao">
+                <p><b>Valor: </b>Campo de entrada do valor de “X”.</p> 
+                <p>Após digitar um valor de entrada (valor numérico) é obrigatório a seleção de uma das opções de resultado pra “X”.</p>
+                <p><b>X! (FATORIAL DE X): </b>Obtém o fatorial do valor representado por “X”;</p>
+                <p><b>RAIZ QUADRADA (X): </b>Obtém a raiz quadrada do valor representado por “X”;</p>
+                <p><b>X2 : </b>Obtém o valor representado por “X” ao quadrado (X * X);</p>
+                <p><b>SENO (X): </b>Obtém o seno do valor representado por  “X”;</p>
+                <p><b>X3 : </b>Obtém o valor cubico de “X” (X*X*X);</p>
+                <p><b>1/X: </b>Obtém o valor de um dividido por “X”;</p>
+            </div>
+            <br>
+
+            <li><b>2 OPERANDOS</b></li>
+            <div id="informacao">
+                <p><b> Valor 1 e Valor 2: </b>De a entrada de dois números para submeter a operação escolhida (soma, subtração, multiplicação divisão ou mod).</p>
+                <p><b>Operador:</b>Escolha a operação desejada.</p>
+            </div>
+            <br>
+
+            <li><b>CONVERSOR DE MOEDAS</b></li>
+            <div id="informacao">
+                <p><b>Valor: </b>Campo de entrada do valor para converção.</p>
+                <p> Em cotações nos campos <b>US$</b> e <b>Euro €</b> coloque o valor da moeda da qual deseja fazer a conversão.</p>
+                <p>Logo após selecione a conversão desejada:</p>
+                <p><b>R$&rarr;US$: </b>Conversão de real para dólar;</p>
+                <p><b>US$&rarr;R$: </b>Conversão de dólar para real;</p>
+                <p><b>R$&rarr;Euro €</b>Conversão de real para euro;</p>
+                <p><b>Euro €&rarr;R$</b>Conversão de euro para real.</p>
+            </div>
+            <br>
+
+            <li><b>CONVERSOR DE BASES</b></li>
+            <div id="informacao">
+                <p><b>Valor: </b>Campo de entrada do valor para converção.</p>
+                <p><b>Dec&rarr;Bin: </b>Para encontrar o número binário correspondente a um número decimal;</p>
+                <p><b>Dec&rarr;Hex: </b>A conversão de números decimais para hexadecimais;</p>
+                <p><b>Bin&rarr;Dec: </b>Para descobrir o número decimal correspondente a um número binário;</p>
+                <p><b>Hex&rarr;Dec: </b>A conversão de números hexadecimais em decimais.</p>
+                    
+            </div>
+            <br>
+
+            <div align="center">
+                <button id="voltar">
+                    <a id="voltar-link" href="../index.html">Retornar</a>
+                </button>
+            </div>
+            <br>
         </section>
         <footer id="rodape">
-            <p>Calculadora &copy; 2020 - by Kariny Keny</p>
+            <p align="center">Calculadora &copy; 2020 - by Kariny Keny</p>
         </footer>
     </div>
 </body>

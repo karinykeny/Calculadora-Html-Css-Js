@@ -143,3 +143,8 @@ input#resultado-input {
     text-align: center;
     font-weight:bold;
 }
+
+#voltar-link {
+    color: white;
+    text-decoration: none;
+}
