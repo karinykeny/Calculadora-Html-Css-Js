@@ -44,7 +44,7 @@ function resultado(oper) {
         var res = "Por favor informe as entradas corretamente!"
         document.getElementById("resultado-input").style.color = "red";
     }
-    document.getElementById("resultado-input").value = res;
+    document.getElementById("resultado-input").value = res.toFixed(2);
 }
 
 function calcular() {
@@ -89,7 +89,9 @@ function calcular() {
     var dolar = parseFloat(document.getElementById('dolar').value);
     var euro = parseFloat(document.getElementById('euro').value);
 
-    if ( !isNaN(valor) && inf.value != "" && (!isNaN(dolar) || !isNaN(euro)) ){
+    if ( !isNaN(valor) && inf.value != "" && 
+    ((inf.value == "RU" || inf.value == "UR") && !isNaN(dolar)) || 
+    ((inf.value == "RE" || inf.value == "ER") && !isNaN(euro))) {
         switch(inf.value) {
             case 'RU':
                 var res = "$ " + (valor/dolar).toFixed(2);   
@@ -103,7 +105,7 @@ function calcular() {
                 break;
             case 'ER':
                 var aux = 1/euro;
-                var res = "€ " + (aux * valor).toFixed(2); 
+                var res = "R$ " + (aux * valor).toFixed(2); 
                 break;
         }
         document.getElementById("resultado-input").value = res; 
